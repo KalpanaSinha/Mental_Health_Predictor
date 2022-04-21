@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %} 
+	 
+	 <div class="section no-pad-bot" id="index-banner">
+			<div class="container" style="max-width: 2400px;width: 75%;">
+			  <div class="row">
+				<div class="col-9">
+			  <br>
+			  <h2 class="header center white-text">Mental Health Treatment Suggestion</h2>
+			  <div class="row center" style="margin-bottom: 0;">
+				<h5 class="header col s12 light" style="color: white; font-size: 20px;"><p style="font-size: 25px;"><b>Why is Mental health important?</b></p><br>Mental health is more important now than ever before. When we focus on it, virtually every aspect of life can be better off. The importance of good mental health ripples into everything we do, think, or say.
+				  <br><br><p style="font-size: 20px;">We have a short survey to help you know if you need any help, click below to login.</p>
+				</h5>
+			  </div>
+		
+			  <div class="row center">
+			<form  method="post" action="/login" class="col s12" style="color: white; max-width: 600px; margin-left: 20%;">
+			  <div class="row">
+				<div class="input-field col s4">	
+					
+						<input class="validate"  type="email" name="email" placeholder="Your Email" style="color: white;" autofocus="" required>
+				</div>
+			  </div>
+  
+			  <div class="row">
+				<div class="input-field col s4">
+					
+						<input class="validate" type="password" name="password" placeholder="Your Password" style="color: white;" required>
+				</div>
+			  </div>
+		
+			  <div class="row center" style="align-items: center; margin-left: 43%;">
+		
+				<button type="submit" class="btn-small waves-effect waves-light pink">Login</button>
+			</div>
+			<a href="{{url_for('auth.signup')}}" class="btn-small waves-effect waves-light blue">New user? Sign Up</a><br>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<div class="text-danger" style="font-size: 18px; visibility: visible" id="alert" >
+						{{ messages[0] }}<br> 
+					</div>
+					<script type="text/javascript">
+						function showDiv() {
+						document.getElementById("alert").style.visibility = "hidden";
+						}
+						setTimeout("showDiv()", 3000); 
+					 </script>
+				{% endif %}
+			{% endwith %}
+			</form>
+			  </div> 
+		
+			  <br>
+				
+		
+			</div>
+			<div class="col-3">
+			  <br>
+			  <img id="img" src="../static/img/pic3.png" alt="" style="max-height: 80%; max-width: 80%" />
+			  <img id="img" src="../static/img/pic1.jpeg" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+			  <img id="img" src="../static/img/pic2.jpeg" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+			</div>
+		  </div>
+		  </div>
+		</div>
+{% endblock %}
+
+

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="section no-pad-bot" id="index-banner">
+	<div class="container" style="max-width: 2400px;width: 75%;">
+	  <div class="row">
+		
+		<div class="col-9">
+			<br>
+			<p style="color: #ddffdd;  font-size: 50px; text-align: center;"><i> Welcome!!! </i></p>
+	  		
+			  
+	  		<h1  style="color: aquamarine; margin-left: 50px;"><p>Heal Your Mind and Soul with Our </p><p style="margin-top: 10px;"> Mental Health Predictor Services.</p> </h1>
+	  		<div class="row center">
+				<p class="header col s12 light" style="color: aqua; font-size: x-large;"> <i>Your Mental <br>Health Matters</i></p>
+			</div >
+			<div class = "row center">
+				<p class="header col s12 light" style="color: rgb(118, 159, 118); font-size: 35px;">Then, What are you waiting for ?????</p>
+				
+			</div>
+			<div class = "row center">
+				<h5 class="header col s12 light"><p style="color: rgb(254 109 28);"><i>Make your Mental Health priority</i></p >
+					<p style="color: rgb(238 229 34); font-weight: 600;">Start using Me!!😄😄</p></h5>
+			</div>
+			
+		</div><br>
+		<div class="col-3">
+            <br><br>
+            <img id="img" src="../static/img/img1.jpeg" alt="" style="height: 46%; max-width: 97%; margin-left: 30px;" />
+            <img id="img" src="../static/img/img2.jpeg" alt="" style="height: 50%; max-width: 97%; padding-top: 10px; margin-left: 30px;" />
+		</div>
+		{% if current_user.is_authenticated %}
+		<div class="col-1">
+			<a href="{{url_for('main.chatbot')}}" class="float button button-small">
+				<i class="fa fa-robot bounce"></i>
+				</a>
+
+		</div>
+		{% endif %}
+	
+	  </div>
+	</div><br><br><br>
+</div>
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+{% endblock %}

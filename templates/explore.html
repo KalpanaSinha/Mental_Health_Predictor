@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+  <div class="section no-pad-bot" id="index-banner">
+	<div class="container" style="max-width: 2400px;width: 75%;">
+	  <div class="row">
+		<div class="col-9">
+			<div class="row">
+			<div class="input-field col s4">
+                <label for="gender"><b>Data Visualization based on our Dataset</b></label>
+                <br><br>
+				
+		<select class="selectpicker form-control"  id="mySelection" style="background-color: rgb(147, 147, 153,0);color: white; border: 0.2px solid;">
+			<option value="" disabled selected>Choose any one option</option>
+			<option value="1">Distribuition and density by Age</option>
+			<option value="2">Total Distribuition by treated or not</option>
+			<option value="3"> Age-Range Probability of mental health condition</option>
+			<option value="4"> Family History Probability of mental health condition</option>
+			<option value="5"> Care Options Probability of mental health condition</option>
+			<option value="6"> Benefits Probability of mental health condition</option>
+			<option value="7"> Work interference Probability of mental health condition</option>
+
+		  </select>
+		  </div>
+		 </div>
+		 <div class="row center" style="align-items: center;">
+			<button type="submit" id="showbtn" class="btn-small waves-effect waves-light pink" >Show Graph</button>
+		</div>
+		<div id="DivContent" >
+		<div  id="chart1" class="myDiv">
+			<img  src="../static/exploreImages/AgeDensity.png" style=" height: 450px; width: 900px;" />
+			<div class="alert alert-dark" style=" margin-top: 10px; width: 880px; margin-left: 10px; " role="alert">
+				<p style="color: #3a3912; font-size: 18px;">
+					The above graph shows the density and distribution of age. So, here we can see that our dataset mostly includes the 
+				data for mental health among young ones, i.e the range of age is between 10 to 50. </p>
+			</div> 
+		</div>
+		<div  id="chart2" class="myDiv" >
+			<img  src="../static/exploreImages/DistByTreated.png" style=" height: 450px; width: 900px;" />
+			<div class="alert alert-dark" style=" margin-top: 10px; width: 880px; margin-left: 10px; " role="alert">
+				<p style="color: #3a3912; font-size: 18px;">
+					This graph shows the details about the treatment how many people have been trated for their mental health on the basis of gender.  </p>
+			</div> 
+		</div>
+		<div id="chart3"  class="myDiv">
+			<img src="../static/exploreImages/ageRangeProb.png" style=" height: 450px; width: 900px;" />
+			<div class="alert alert-dark" style=" margin-top: 10px; width: 880px; margin-left: 10px; " role="alert">
+				<p style="color: #3a3912; font-size: 18px;">
+					Probability of mental health condition among different genders based on the mental health care options provided by their employers.  </p>
+			</div> 
+		</div>
+		<div id="chart4" class="myDiv">
+			<img  src="../static/exploreImages/familyHistProb.png" style=" height: 450px; width: 900px;" />
+			<div class="alert alert-dark" style=" margin-top: 10px; width: 880px; margin-left: 10px; " role="alert">
+				<p style="color: #3a3912; font-size: 18px;">
+					Probability of mental health condition among different genders based on family history.  </p>
+			</div> 
+		</div>
+		<div id="chart5" class="myDiv">
+			<img  src="../static/exploreImages/careOptProb.png" style=" height: 450px; width: 900px;" />
+			<div class="alert alert-dark" style=" margin-top: 10px; width: 880px; margin-left: 10px; " role="alert">
+				<p style="color: #3a3912; font-size: 18px;">
+					Probability of mental health condition among different genders based on the mental health care options provided by their employers.  </p>
+			</div> 
+		</div>
+		<div id="chart6" class="myDiv">
+			<img  src="../static/exploreImages/benefitsProb.png" style=" height: 450px; width: 900px;" />
+			<div class="alert alert-dark" style=" margin-top: 10px; width: 880px; margin-left: 10px; " role="alert">
+				<p style="color: #3a3912; font-size: 18px;">
+					Probability of mental health condition among different genders based on the mental health benefits provided by their employer.  </p>
+			</div> 
+			
+		</div>
+		<div id="chart7" class="myDiv">
+			<img  src="../static/exploreImages/workInterProb.png" style=" height: 450px; width: 900px;" />
+			<div class="alert alert-dark" style=" margin-top: 10px; width: 880px; margin-left: 10px; " role="alert">
+				<p style="color: #3a3912; font-size: 18px;">
+					Probability of mental health condition among different genders based on how their mental health condition interferes with their work .  </p>
+			</div> 
+		</div>
+
+		</div>
+		</div>
+		<div class="col-3">
+            <br><br>
+            <img id="img" src="../static/img/pic13.jpeg" alt="" style="max-height: 80%; max-width: 80%" />
+            <img id="img" src="../static/img/pic14.jpeg" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+          </div>
+		  <div class="col-1">
+			<a href="{{url_for('main.chatbot')}}" class="float">
+				<i class="fa fa-robot bounce"></i></a>
+
+		</div>
+  </div>
+  </div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+{% endblock %}

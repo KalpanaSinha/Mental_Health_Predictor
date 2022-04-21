@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+        <div class="section no-pad-bot" id="index-banner">
+          <div class="container" style="max-width: 2400px;width: 75%;">
+            <div class="row">
+              <div class="col-9">
+            <h3 style="color: white;"> Resources</h3>
+            <p style="color: white; font-size: 20px;">
+              Here are a few resources that you can refer : 
+              <br><br>
+
+              <ol style="color: white;font-size: 20px; ">
+                <li><a href="https://www.mentalhealth.org.uk/publications/how-to-mental-health" style="color: skyblue;" target="_blank">How to look after your mental health</a></li>
+                <br>
+                <li><a href="https://childadolescentpsych.cumc.columbia.edu/articles/11-tips-mental-health-well-being" style="color: skyblue;" target="_blank">11 Tips for Mental Health & Well-being</a></li>
+                <br>
+                <li><a href="https://uhs.umich.edu/tenthings" style="color: skyblue;" target="_blank">Ten Things You Can Do for Your Mental Health</a></li>
+                <br>
+                <li><a href="https://www.verywellmind.com/mental-health-a-z-4797402" style="color: skyblue;" target="_blank">Mental Health Dictionary</a></li>
+                <br>
+                <li><a href="https://www.youtube.com/watch?v=wOGqlVqyvCM" style="color: skyblue;" target="_blank">5 Tips to Improve your Mental Health</a></li>
+                <br>
+                <li><a href="https://www.youtube.com/watch?v=agPsqRDNS3g" style="color: skyblue;" target="_blank">10 Tips for Better Mental Health</a></li>
+                <br>
+                <li><a href="https://www.bbrfoundation.org/blog/everyday-mental-health-tips" style="color: skyblue;" target="_blank">Everyday Mental Health Tips</a></li>
+                
+              </ol>
+            </p>
+      
+          </div>
+          <div class="col-3">
+            <br><br>
+            <img id="img" src="../static/img/pic13.jpeg" alt="" style="max-height: 80%; max-width: 80%" />
+            <img id="img" src="../static/img/pic14.jpeg" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+
+          </div>
+		  <div class="col-1">
+			<a href="{{url_for('main.chatbot')}}" class="float">
+				<i class="fa fa-robot bounce"></i></a>
+
+		</div>
+        </div>
+        </div>
+      </div>
+	  {% endblock %}
+    

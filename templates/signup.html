@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+
+</style>
+<div class="section no-pad-bot" id="index-banner">
+	<div class="container" style="max-width: 2400px;width: 75%;">
+	  <div class="row">
+		<div class="col-9">
+	  <br>
+	  <h2 class="header center white-text">Mental Health Treatment Suggestion</h2>
+	  <div class="row center" style="margin-bottom: 0;">
+		<h5 class="header col s12 light" style="color: white; font-size: 20px;" id="signup-message">
+		  <br>
+		  <div><b>Please enter your details below to Sign up.</b></div>
+		</h5>
+	  </div>
+
+	<div class="row center">
+	
+		
+	<form  method="post" action="/signup" class="col s12" style="color: white; max-width: 600px; margin-left: 20%;">
+	  <div class="row">
+		<div class="input-field col s4">
+			
+			<input class="validate" type="email" name="email" placeholder="Email" autofocus="" style="color: white;" required>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="input-field col s4">
+			
+			<input class="validate" type="text" name="name" placeholder="Name" autofocus="" style="color: white;" required>
+		</div>
+	  </div>
+
+	  <div class="row">
+		<div class="input-field col s4">
+			
+			<input class="validate" type="password" name="password" placeholder="Password" style="color: white;" required>
+		</div>
+	  </div>
+
+	  <div class="row center" style="align-items: center; margin-left: 43%;">
+
+		  <button type="submit" class="btn-small waves-effect waves-light pink">Signup</button>
+	  </div>
+	  <a href="{{url_for('auth.login')}}" class="btn-small waves-effect waves-light blue">Existing user? Login</a><br>
+	  {% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<div id="signupAlert" class="text-danger" style=" font-size: 20px; visibility: visible" >
+						{{ messages[0] }}<br> 
+					</div>
+					<script type="text/javascript">
+						function showDiv() {
+						document.getElementById("signupAlert").style.visibility = "hidden";
+						}
+						setTimeout("showDiv()", 3000); 
+					 </script>
+				{% endif %}
+			{% endwith %}
+	</form>
+	  </div>
+
+	  <br>
+		
+
+	</div>
+	<div class="col-3">
+	  <br>
+	  <img id="img" src="../static/img/pic3.png" alt="" style="max-height: 80%; max-width: 80%" />
+	  <img id="img" src="../static/img/pic1.jpeg" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+	  <img id="img" src="../static/img/pic2.jpeg" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+	</div>
+  </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

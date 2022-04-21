@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+        <div class="section no-pad-bot" id="index-banner">
+          <div class="container" style="max-width: 2400px;width: 75%;">
+            <div class="row" >
+              <div class="col-9">
+            <br>
+            <h2 class="header center white-text">Predict if mental health treatment is required with our short survey</h2>
+            <div class="row center" >
+              <h5 class="header col s12 light" style="color: #96884d; margin-bottom: 0px;">Enter your details
+              </h5>
+            </div>
+			<div class="row center">
+				<h6 class="header col s12 light" style="color: #e68282; margin-top: 0px;">To get detailed information about each field, refer our
+					 <a href="{{url_for('main.helpPage')}}" style="color: #e68282;    font-size: initial;">documentation</a></h6>
+			  </div>
+			
+      
+            <div class="row">
+          <form  action="/prediction" method="post" class="col s12" style="color: white;" >
+            <div class="row"> 
+              <div class="input-field col s4">
+                  <label for="age"><b>Age</b></label>
+                  <br><br>
+                <input placeholder="Age" name="Age" id="age" type="number" min="10" max="65" class="validate" style="color: white;" required>
+              </div>
+              <div class="input-field col s4">
+                <label for="gender"><b>Gender</b></label>
+                <br><br>
+              <select id="gender" name="gender" class="selectpicker form-control" style="background-color: rgb(147, 147, 153,0);color: white; border: 0.2px solid;" required>
+                <option value="" disabled selected>Choose an option</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+				<option value="2">Trans</option>
+              </select>
+              </div>
+      
+              <div class="input-field col s4">
+                <label for="family_history"><b>Family HIstory</b></label>
+                <br><br>
+              <select id="family_history" name="family_history" class="selectpicker form-control" style="background-color: rgb(147, 147, 153,0);color: white; border: 0.2px solid;" required>
+                <option value="" disabled selected>Choose an option</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              </div>
+              <div class="input-field col s4">
+                <label for="benefits"><b>Benefits</b></label>
+                <br><br>
+                <select id="benefits" name="benefits" class="selectpicker form-control" style="background-color: rgb(147, 147, 153,0);color: white; border: 0.2px solid;" required>
+                  <option value="" disabled selected>Choose an option</option>
+                  <option value="2">Yes</option>
+                  <option value="1">No</option>
+				  <option value="0">Don't Know</option>
+                </select>
+    
+            </div>
+      
+            </div>
+            <div class="row">
+              <div class="input-field col s4">
+                  <label for="care_options"><b>Care options</b></label>
+                  <br><br>
+                  <select id="care_options" name="care_options" class="selectpicker form-control" style="background-color: rgb(147, 147, 153,0);color: white; border: 0.2px solid;" required>
+                    <option value="" disabled selected>Choose an option</option>
+                    <option value="2">Yes</option>
+                    <option value="0">No</option>
+					<option value="1">Not Sure</option>
+                  </select>
+              </div>
+              <div class="input-field col s4">
+      
+                <label for="leave"><b>Ease of taking leave</b></label>
+                  <br><br>
+                  <select id="leave" name="leave" class="selectpicker form-control" style="background-color: rgb(147, 147, 153,0);color: white; border: 0.2px solid;" required>
+                    <option value="" disabled selected>Choose an option</option>
+                    <option value="2">Somewhat easy</option>
+                    <option value="1">Somewhat difficult</option>
+					<option value="3">Very difficult</option>
+					<option value="4">Very easy</option>
+					<option value="0">No Idea</option>
+                  </select>
+      
+              </div>
+      
+              <div class="input-field col s4">
+                  <label for="anonymity"><b>Anonymity</b></label>
+                  <br><br>
+                  <select id="anonymity" name="anonymity" class="selectpicker form-control" style="background-color: rgb(147, 147, 153,0);color: white; border: 0.2px solid;" required>
+                    <option value="" disabled selected>Choose an option</option>
+                    <option value="2">Yes</option>
+                    <option value="1">No</option>
+					<option value="0">Don't Know</option>
+                  </select>
+      
+              </div>
+              <div class="input-field col s4">
+                <label for="work_interference"><b>Work interference</b></label>
+                <br><br>
+                <select id="work_interference" name="work_interference" class="selectpicker form-control" style="background-color: rgb(147, 147, 153,0);color: white; border: 0.2px solid;" required>
+                  <option value="" disabled selected>Choose an option</option>
+				  <option value="0">Don't Know</option>
+                  <option value="1">Never</option>
+                  <option value="2">Often</option>
+                  <option value="3">Rarely</option>
+				  <option value="4">Sometimes</option>
+                </select>
+    
+            </div>
+      
+            </div><br>
+      
+            <div class="row center" style="align-items: center;">
+				
+                <button type="submit" class="btn-large waves-effect waves-light pink" >Predict Probability</button>
+            </div>
+          </form>
+            </div>
+      
+          </div>
+          <div class="col-3">
+            <br>
+            <img id="img" src="../static/img/pic6.png" alt="" style="height: 28%; max-width: 80%" />
+            <img id="img" src="../static/img/pic9.png" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+            <img id="img" src="../static/img/pic10.png" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+          </div>
+		  <div class="col-1">
+			<a href="{{url_for('main.chatbot')}}" class="float">
+				<i class="fa fa-robot bounce"></i></a>
+
+		</div>
+        </div>
+        </div>
+      </div>
+
+ {% endblock %}

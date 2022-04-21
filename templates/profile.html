@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="section no-pad-bot" id="index-banner">
+	<div class="container" style="max-width: 2400px;width: 75%;">
+	  <div class="row">
+		<div class="col-9">
+	  <h3 style="color: white; color: #ddffdd;;"> Welcome, {{name}}!</h3>
+	  <p style="color: white; font-size: 20px;">
+		Hope you Enjoy using It !!!!!!
+		<br><br>
+	  </p>
+	  <p style="color: white; font-size: 20px;">
+		So, here comes the predictor that will help you to get suggestions for your mental health. 
+		 I am sure if you use our page, you'll absolutely like our app. So, just use our app once.<br><br>
+		 Recovery is not one and done. It is a lifelong journey that takes place one day, one step at a time.<br><br>
+		 <p style="color: aqua; font-size: x-large;">
+		 <strong> "Just Because no one else can heal or do your inner work for you<br>doesn't mean you can, should, or need to do it alone."</strong></p>
+<br><br>
+		 <p style="color: aquamarine; ; font-size: x-large;">
+			<strong><i> Mental Illness is not a choice , but Recovery is!!!!</i> </strong></p>
+   
+	</p>
+
+	</div>
+	<div class="col-3">
+	  <br><br>
+	  <img id="img" src="../static/img/pic13.jpeg" alt="" style="max-height: 80%; max-width: 80%" />
+	  <img id="img" src="../static/img/pic14.jpeg" alt="" style="max-height: 80%; max-width: 80%; padding-top: 10px;" />
+	</div>
+	<div class="col-1">
+		<a href="{{url_for('main.chatbot')}}" class="float">
+			<i class="fa fa-robot bounce"></i></a>
+
+	</div>
+  </div>
+  </div>
+</div>
+
+{% endblock %}

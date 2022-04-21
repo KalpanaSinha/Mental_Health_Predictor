@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+	strong {
+		font-size: 19px;
+	}
+	ol{
+		color: #671919;
+		font-size: 18px;
+	}
+	ol > li {
+		list-style-type: disc;
+    	margin-left: 40px;
+		font-size: 18px;
+	}
+</style>
+<div class="section no-pad-bot" id="index-banner">
+	<div class="container" style="max-width: 2400px;width: 75%;">
+	  <div class="row">
+		<div class="col-9">
+	  <h3 style="color: white;"> <u>Your mental health details are as follows:</u> </h3>
+	  <button id="displaybtn" class="btn" style=" margin-left: 500px; color: bisque;  background: transparent; box-shadow: none;" value="Display attribute details">Display attribute details</button>
+	  <table style="color: white;font-size: 20px;  width: 1200px; line-height: 4px; margin-top: 40px;">
+		  <tr>
+			  <td style="color: #f5f8ae;"><strong> Age  </strong></td>
+			  <td> {{age}} </td>
+			  <td id="td1" style="visibility: hidden; color: #f6b0a9;"> Your age</td>
+		  </tr>
+		  <tr>
+			<td style="color: #f5f8ae;"><strong> Gender </strong></td>
+			<td> {{gend}} </td>
+			<td id="td2" style="visibility: hidden; color: #f6b0a9;"> Your Gender </td>
+		</tr>
+		<tr>
+			<td style="color: #f5f8ae;">Family History </td>
+			<td>  {{family}} </td>
+			<td id="td3" style="visibility: hidden; color: #f6b0a9;"> Family history of mental illness </td>
+		</tr>
+		<tr>
+			<td style="color: #f5f8ae;">Benefits</td>
+			<td>  {{benefit}} </td>
+			<td id="td4" style="visibility: hidden; color: #f6b0a9;"> Either your employer provides mental health benefits </td>
+		</tr>
+		<tr>
+			<td style="color: #f5f8ae;">CareOptions</td>
+			<td>  {{care}} </td>
+			<td id="td5" style="visibility: hidden; color: #f6b0a9;"> Aware about the options for mental health care your employer provides </td>
+		</tr>
+		<tr>
+			<td style="color: #f5f8ae;">Ease of taking Leave</td>
+			<td>  {{leav}} </td>
+			<td id="td6" style="visibility: hidden; color: #f6b0a9;"> How easy is it for you to take medical leave </td>
+		</tr>
+		<tr>
+			<td style="color: #f5f8ae;"> Anonymity</td>
+			<td >  {{anonym}} </td>
+			<td id="td7" style="visibility: hidden; color: #f6b0a9;"> Is your anonymity protected if you choose to take advantage of mental health? </td>
+		</tr>
+		<tr>
+			<td style="color: #f5f8ae;">Work Interference </td>
+			<td>  {{work}} </td>
+			<td id="td8" style="visibility: hidden; color: #f6b0a9;" style="color: #88cff8;"> Does your mental health interferes with your work? </td>
+		</tr>
+	  </table>
+		<br><br>
+
+			  <div  id="message">
+				  <p style="color: wheat; margin-bottom: 0px; font-size: 20px;">Prediction</p>
+				<div    class="alert alert-info" role="alert" style="background-color: #96efff; color: #08262b;">
+					{{pred}}.
+					<br> </div>
+					<p style="color: wheat; margin-bottom: 0px; font-size: 20px;">Suggestions</p>
+				 <div class="alert alert-success" role="alert">
+					<h5 class="alert-heading" style="margin-top: 1px;"><strong><u><i>Here are some suggestion which you can follow on your details entered..</i></u></strong></h5>
+					<p style="   color: #671919; margin-bottom: auto;">{{sugg}}</p>
+				  </div> 
+			</div>
+		</div>
+		<div class="col-3">
+            <br><br>
+			<div class="alert alert-dark" style=" margin-left: 200px; max-width: 300px; width: 700px; " role="alert">
+				<p style="color: #3a3912; margin-top: 6px;"><strong style="font-size: 20px;"><u><i> For your information!!!!</i> </u></strong></p>
+				<p style=" font-size: 17px;margin-top: 25px; margin-bottom: 25px; color: #671919;">It is often more realistic and helpful to find out what helps with the issues you face.
+					 Talking, counselling, medication, friendships, exercise, good sleep and nutrition, and meaningful occupation can all help.</p>
+				<hr>
+				<p class="mb-0" ><i>For more tips on mental health, you can follow up our <a href="{{url_for('main.resourcePage')}}" class="alert-link">resources page.</a> </i></p>
+			</div> 
+			<img id="img" src="../static/img/pic6.png" alt="" style="height: 35%; max-width:300px; margin-left: 200px;" />
+          </div>
+		<div class="col-1">
+			<a href="{{url_for('main.chatbot')}}" class="float">
+				<i class="fa fa-robot bounce"></i></a>
+
+		</div>
+	  </div>
+	</div><br>
+</div>
+<script>
+	$("#displaybtn").click(function() {
+		var el = document.getElementById('displaybtn');
+		if(el.value == "Display attribute details"){
+			document.getElementById('td1').style.visibility='visible';
+			document.getElementById('td2').style.visibility='visible';
+			document.getElementById('td3').style.visibility='visible';
+			document.getElementById('td4').style.visibility='visible';
+			document.getElementById('td5').style.visibility='visible';
+			document.getElementById('td6').style.visibility='visible';
+			document.getElementById('td7').style.visibility='visible';
+			document.getElementById('td8').style.visibility='visible';
+			el.value ="Hide attribute details"
+			el.innerHTML = "Hide attribute details"
+		}
+		else{
+			document.getElementById('td1').style.visibility='hidden';
+			document.getElementById('td2').style.visibility='hidden';
+			document.getElementById('td3').style.visibility='hidden';
+			document.getElementById('td4').style.visibility='hidden';
+			document.getElementById('td5').style.visibility='hidden';
+			document.getElementById('td6').style.visibility='hidden';
+			document.getElementById('td7').style.visibility='hidden';
+			document.getElementById('td8').style.visibility='hidden';
+			el.value ="Display attribute details"
+			el.innerHTML="Display attribute details"
+		}
+		
+});
+</script>
+
+{% endblock %}

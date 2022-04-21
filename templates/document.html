@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %} 
+        <div class="section no-pad-bot" id="index-banner">
+          <div class="container" style="max-width: 2400px;width: 75%;">
+            <div class="row">
+              <div class="col-9">
+            <h3 style="color: white;">We are here to help you.</h3>
+			<h4 style="color: white;">Read our documentation.</h4>
+                <br>
+            <p style="color: white; font-size: 18px;">
+              Here is the details of the feature/fields which we selected to train our model.So, We are asking you the details for only those 
+			  fields which we selected for prediction. Those fields are being displayed on <strong style="color: aqua;">Predict Page.</strong>
+			  Its important to fill all the fields and once you fill that, clicking on Predict button will show the outcome along with some suggestion. <br>
+			  <br>
+			  <span style="color: aquamarine; margin-bottom: 0px;"> <u>Field Details:</u></span>
+              <table style="color: white;font-size: 20px; margin-top: 0px; ">
+				<tr>
+					<td style="color: whitesmoke"><strong> Age  </strong></td>
+					<td id="td1" style="color: #bcbb89;"> Your age</td>
+				</tr>
+				<tr>
+				  <td style="color: whitesmoke;"><strong> Gender </strong></td>
+				  <td id="td2" style=" color: #bcbb89;"> Your Gender </td>
+			  </tr>
+			  <tr>
+				  <td style="color: whitesmoke;">Family History </td>
+				  <td id="td3" style=" color: #bcbb89;"> Do you have a family history of mental illness? </td>
+			  </tr>
+			  <tr>
+				  <td style="color: whitesmoke;">Benefits</td>
+				  <td id="td4" style=" color: #bcbb89;"> Does your employer provide mental health benefits?</td>
+			  </tr>
+			  <tr>
+				  <td style="color: whitesmoke;">CareOptions</td>
+				  <td id="td5" style="color: #bcbb89;"> Do you know the options for mental health care your employer provides? </td>
+			  </tr>
+			  <tr>
+				  <td style="color: whitesmoke;">Ease of taking Leave</td>
+				  <td id="td6" style=" color: #bcbb89;">How easy is it for you to take medical leave for a mental health condition? </td>
+			  </tr>
+			  <tr>
+				  <td style="color: whitesmoke;"> Anonymity</td>
+				  <td id="td7" style="color: #bcbb89;"> Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources? </td>
+			  </tr>
+			  <tr>
+				  <td style="color: whitesmoke;">Work Interference </td>
+				  <td id="td8" style="color: #bcbb89;" style="color: #88cff8;">If you have a mental health condition, do you feel that it interferes with your work?</td>
+			  </tr>
+			</table>
+			<br><br>
+			 <span style="color: white; font-size: 18px;"> Here, we have brought many more options for you as well. <br>
+			Like you can visit our <strong style="color: aqua;"> Explore Page</strong>, where you will get information about our dataset exploration and its details.<br><br>
+			We also have one <strong style="color: aqua;"> Mental Health Suggestion Chatbot</strong>, that will answer your ques related to mental health. 
+			You can visit that page by clicking that bouncing button in our screen or from dropdown list menu from header.<br>
+			<br> We are still in progress to enhance this predictor for your future use with a lot more advancement.
+		 	<br>
+			Till that time, Enjoy using it!!!! <br>
+			THANK YOU!!<br><br></span>
+            </p>
+      
+          </div>
+          <div class="col-3" >
+            <br><br>
+            <img id="img" src="../static/img/img5.jpeg" alt="" style="height: 30%; max-width: 90%; margin-left: 20px;" />
+            <img id="img" src="../static/img/pic15.jpeg" alt="" style="max-height: 80%; max-width: 90%; padding-top: 10px; margin-left: 20px;" />
+
+          </div>
+		  <div class="col-1">
+			<a href="{{url_for('main.chatbot')}}" class="float">
+				<i class="fa fa-robot bounce"></i></a>
+
+		</div>
+        </div>
+        </div>
+      </div>
+<style>
+	  td:nth-child(1){
+	width: 220px;
+	word-wrap: break-word;
+  }
+ tr {
+	 line-height: 25px;
+ }
+</style>
+	  {% endblock %}

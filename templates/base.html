@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Mental Health Predictor
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		<script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    </head>
+
+    <body background="../static/img/bg.jpeg">
+        <style>
+        .nav-link{
+            font-size: 20px;
+        }
+        .nav-item{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+		a:hover {
+			background-color: rgb(64, 31, 87) !important;
+			color: white !important;
+		}
+		button:hover {
+			background-color: rgb(190, 5, 91) !important;
+
+		}	
+        </style>
+        
+        <nav  role="navigation" style="height: 84px;background-color: rgb(79, 39, 108);">
+          <div class="nav-wrapper container">
+			  <p id="logo-container"  class="brand-logo" style="padding-top: 10px;">Mental Health Predictor</p>
+
+			{% if not current_user.is_authenticated %}
+			<ul class="right hide-on-med-and-down" style="padding-top: 10px;">
+			<li><a class="btn" style="background-color: transparent; box-shadow: none;"  href="{{ url_for('auth.login') }}">Login</a></li>
+			<li><a class="btn" style="background-color: transparent; box-shadow: none;"  href="{{ url_for('auth.signup') }}" >Sign Up</a></li>
+			</ul>
+			{% endif %}
+			{% if current_user.is_authenticated %}
+			
+            <ul class="right hide-on-med-and-down" style="padding-top: 10px;">
+              <li><a class="btn" style="background-color: transparent; box-shadow: none;" href="{{url_for('main.predictPage')}}" >PREDICT</a></li>
+			  <li><a  class="btn" style="background-color: transparent; box-shadow: none;" href="{{url_for('main.explorePage')}}">Explore</a></li>
+			  <li><a class="btn" style="background-color: transparent; box-shadow: none;" href="{{url_for('main.resourcePage')}}">Resources</a></li>
+			  <li><a class="btn  dropdown-toggle" style="background-color: transparent; box-shadow: none;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+				<i class="fa fa-home" style="color: white; line-height: 32px;"></i>
+			  </a>
+			  <div class="dropdown-menu " style="background: rgb(79, 39, 108);">
+				<a class="dropdown-item" href="{{url_for('main.profile')}}" style="color: white; line-height: 32px;">Profile</a>
+				<a class="dropdown-item" href="{{url_for('main.chatbot')}}" style="color: white; line-height: 32px;">Chatbot</a>
+				<a class="dropdown-item" href="{{url_for('main.aboutPage')}}" style="color: white; line-height: 32px;">About</a>
+				<a class="dropdown-item" href="{{url_for('main.helpPage')}}" style="color: white; line-height: 32px;">Help</a>
+				<a class="dropdown-item" href="{{ url_for('auth.logout') }}" style="color: white; line-height: 32px;">LogOut</a>
+			  </div></li>
+            </ul>
+			{% endif %}
+			{% if current_user.is_authenticated %}
+            <ul id="nav-mobile" class="sidenav">
+              <li><a href="{{url_for('main.predictPage')}}">Mobile Predict</a></li>
+			  <li><a  >Explore</a></li>
+			  <li><a href="{{url_for('main.profile')}}" >Profile</a></li>>>
+              <li><a href="{{url_for('main.resourcePage')}}">Resources</a></li>
+              <li><a href="{{url_for('main.aboutPage')}}">About</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			{% endif %}
+          </div>
+        </nav>
+
+		<div>
+
+				{% block content %}{% endblock %}
+		</div>
+       
+      <footer class="page-footer" style="background-color: rgb(79, 39, 108);">
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <h5 class="white-text">Importance of Mental Health</h5>
+              <p class="grey-text text-lighten-4">Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make healthy choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.</p>
+    
+    
+            </div>
+            
+            <div class="col-4">
+				{% if current_user.is_authenticated %}
+              <h5 class="white-text">Navigate</h5>
+              <ul>
+                <li><a class="white-text" href="{{url_for('main.home')}}">Home</a></li>
+                <li><a class="white-text" href="{{url_for('main.resourcePage')}}">Resources</a></li>
+                <li><a class="white-text" href="{{url_for('main.aboutPage')}}">About</a></li>
+              </ul>
+			  {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          Made by Aakriti, Kalpana, Aditya Bhagat, Rakhi & Smriti (2018 Batch)
+          </div>
+        </div>
+      </footer>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, options);
+  });
+  $('.dropdown-trigger').dropdown();
+      </script>
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+
+	$(".myDiv").hide();
+	$("#DivContent:first").show();
+
+    $(document).ready(function(){
+		$(".myDiv").hide();
+		$("#DivContent:first").show();
+	$('#showbtn').on('click', function() {
+		var value = $('#mySelection').val(); 
+		$(".myDiv").hide();
+		$("#chart"+value).show();
+	});
+});
+</script>
+        
+    </body>
+</html>
