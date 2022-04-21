@@ -1,0 +1,15 @@
+flask
+flask-sqlalchemy
+flask-login
+numpy
+pandas
+matplotlib
+seaborn
+pickle
+plotly
+json
+sklearn
+nltk
+ssl
+werkzeug
+pandas
