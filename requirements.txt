@@ -4,6 +4,7 @@ flask-login
 numpy
 pandas
 pickle
+sklearn
 nltk
 ssl
 werkzeug
