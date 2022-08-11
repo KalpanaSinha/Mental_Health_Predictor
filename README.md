@@ -16,4 +16,4 @@ This project is built to integrate the ML model predicting mental health treatme
 
 
 # Screenshot of the Project
-<pre align="center"><img src = "readmePicture/homePage.png" width = "600" height="350"> </pre>
+<pre align="center"><img src = "readmepicture/homePage.png" width = "600" height="350"> </pre>
