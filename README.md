@@ -4,11 +4,11 @@ This project is built to integrate the ML model predicting mental health treatme
 ## Steps to run the project
 
 1.Try this
-- Open GitBash
-- Change to target directory: `cd /c/dev/git`
-- Clone this repository. `https://github.com/KalpanaSinha/Mental_Health_Predictor.git`
-- Move into the repository directory: `cd /c/dev/git/server`
-- Switch to the develop branch: `git checkout develop`
+  - Open GitBash
+  - Change to target directory: `cd /c/dev/git`
+  - Clone this repository. `https://github.com/KalpanaSinha/Mental_Health_Predictor.git`
+  - Move into the repository directory: `cd /c/dev/git/server`
+  - Switch to the develop branch: `git checkout develop`
 
 2. Install python packages using the following command : pip install -r requirements.txt
 
@@ -16,3 +16,4 @@ This project is built to integrate the ML model predicting mental health treatme
 
 
 # Screenshot of the Project
+<pre align="center"><img src = "readmePicture/homePage.png" width = "600" height="350"> </pre>
