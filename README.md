@@ -1,5 +1,5 @@
 # Mental Health Predictor Web UI
-This project is built to integrate the ML model predicting mental health treatment to Web UI using Flask.
+This project is built to integrate the ML model predicting mental health treatment to Web UI using Flask. It also consiste of one chatbot that gives suggestion on the basis of questions asked related to mental health.
 
 ## Steps to run the project
 
@@ -16,4 +16,8 @@ This project is built to integrate the ML model predicting mental health treatme
 
 
 # Screenshot of the Project
-<pre align="center"><img src = "readmepicture/homePage.png" width = "600" height="350"> </pre>
+<pre align="center"><img src = "readmePicture/homePageBeforeLogin.png" width = "600" height="350"> </pre>
+<pre align="center"><img src = "readmePicture/homePageAfterLogin.png" width = "600" height="350"> </pre>
+<pre align="center"><img src = "readmePicture/predictPage.png" width = "600" height="350"> </pre>
+<pre align="center"><img src = "readmePicture/explorePage.png" width = "600" height="350"> </pre>
+<pre align="center"><img src = "readmePicture/chatbotWithMentalQues.png" width = "600" height="350"> </pre>
