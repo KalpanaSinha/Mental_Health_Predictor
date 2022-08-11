@@ -20,6 +20,8 @@ Page Before Login
 <pre align="center"><img src = "readmePicture/homePageBeforeLogin.png" width = "600" height="350"> </pre>
 Page After Login
 <pre align="center"><img src = "readmePicture/homePageAfterLogin.png" width = "600" height="350"> </pre>
+Documentation Page
+<pre align="center"><img src = "readmePicture/documentationPAge.png" width = "600" height="350"> </pre>
 Predict Page
 <pre align="center"><img src = "readmePicture/predictPage.png" width = "600" height="350"> </pre>
 Explore Page
