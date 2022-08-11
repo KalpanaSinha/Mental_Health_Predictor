@@ -16,8 +16,16 @@ This project is built to integrate the ML model predicting mental health treatme
 
 
 # Screenshot of the Project
+Page Before Login
 <pre align="center"><img src = "readmePicture/homePageBeforeLogin.png" width = "600" height="350"> </pre>
+Page After Login
 <pre align="center"><img src = "readmePicture/homePageAfterLogin.png" width = "600" height="350"> </pre>
+Predict Page
 <pre align="center"><img src = "readmePicture/predictPage.png" width = "600" height="350"> </pre>
+Explore Page
 <pre align="center"><img src = "readmePicture/explorePage.png" width = "600" height="350"> </pre>
+Chatbot Page answering queries
 <pre align="center"><img src = "readmePicture/chatbotWithMentalQues.png" width = "600" height="350"> </pre>
+
+
+For more images you can see the readmePicture folder in the repository.
